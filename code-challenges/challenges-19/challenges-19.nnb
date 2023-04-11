@@ -66,7 +66,7 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "function timeInWords(h, m) {\n    const numbers = [\"\", \"one\", \"two\", \"three\", \"four\", \"five\", \"six\", \"seven\", \"eight\", \"nine\", \"ten\", \"eleven\", \"twelve\", \"thirteen\", \"fourteen\", \"quarter\", \"sixteen\", \"seventeen\", \"eighteen\", \"nineteen\", \"twenty\", \"twenty one\", \"twenty two\", \"twenty three\", \"twenty four\" , \"twenty five\" , \"twenty six\" ,\"twenty seven\" , \"twenty eight\" ,\"twenty nine\" ,\"half past\"];\n    let hour = numbers[h];\n    let minute;\n\n    if (m == 0) {\n        return `${hour} o' clock`;\n    } else if (m == 15) {\n        return `quarter past ${hour}`;\n    } else if (m == 30) {\n        return `half past ${hour}`;\n    } else if (m == 45) {\n        hour = numbers[h+1];\n        return `quarter to ${hour}`;\n    } else if (m <= 20) {\n        minute = numbers[m];\n        return `${minute} minute${m==1 ? '' : 's'} past ${hour}`;\n    } else if (m < 30) {\n        minute = numbers[20] + ' ' + numbers[m-20];\n        return `${minute} minutes past ${hour}`;\n    } else {\n        minute = numbers[60-m];\n        hour = numbers[h+1];\n        if (m == 59) {\n            return `${minute} minute${m==1 ? '' : 's'} to ${hour}`;\n        } else {\n            return `${minute} minutes to ${hour}`;\n        }\n    }\n}"
             ],
             "outputs": []
         }
